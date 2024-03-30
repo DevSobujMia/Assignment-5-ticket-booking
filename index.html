@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-white h-screen text-black font-inter">
-    <header class="max-w-[1172px] mx-auto pt-8">
+  <body class="bg-white text-black font-inter">
+    <header class="max-w-[1171px] mx-auto pt-8">
       <nav class="flex justify-between items-center mb-16">
         <h1 class="font-extrabold text-4xl font-raleway">P-Ticket</h1>
         <ul class="flex justify-between items-center gap-16 font-medium">
@@ -28,15 +28,17 @@
           Bus <img src="images/bus-icon.png" alt="bus-icon" />
         </button>
       </nav>
-
+      <!-- cover section -->
       <div
         class="bg-cover bg-center py-16 h-[550px] rounded-2xl text-center"
         style="background-image: url('images/banner.png')"
       >
         <h1 class="text-6xl font-bold text-white font-raleway">
-          End-to-End Travel with <br />
-          <span class="text-[#1DD100]">P Paribahan</span>
+          End-to-End Travel with
         </h1>
+        <h2 class="text-[#1DD100] text-6xl font-bold font-raleway my-4">
+          P Paribahan
+        </h2>
         <p class="text-lg mt-4 text-white">
           Yes, you can run unit tests and view the results directly within the
           app. The <br />
@@ -85,6 +87,60 @@
         </div>
       </div>
     </header>
+
+    <main class="my-36 w-[1171px] mx-auto font-inter">
+      <div class="">
+        <h1 class="text-4xl font-bold font-raleway text-center mb-10">
+          Best offers for you
+        </h1>
+        <div class="flex justify-between">
+          <div
+            class="bg-[#FFBF0F] w-[573px] h-[220px] flex justify-around items-center rounded-2xl"
+          >
+            <div>
+              <h1 class="text-3xl font-extrabold">
+                15% <span class="font-raleway">OFF</span>
+              </h1>
+              <p class="text-xl font-semibold my-2 opacity-90">
+                on your next purchase
+              </p>
+              <p class="opacity-60">use by January 2024</p>
+            </div>
+            <img src="images/cupon-devider.png" alt="" />
+            <div>
+              <h1 class="text-3xl font-bold font-raleway mb-2">NEW15</h1>
+              <p>Coupon Code</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#F78C9C] w-[573px] h-[220px] flex justify-around items-center rounded-2xl"
+          >
+            <div>
+              <h1 class="text-3xl font-extrabold">
+                20% <span class="font-raleway">OFF</span>
+              </h1>
+              <p class="text-xl font-semibold my-2 opacity-90">
+                on your next purchase
+              </p>
+              <p class="opacity-60">use by January 2024</p>
+            </div>
+            <img src="images/cupon-devider.png" alt="" />
+            <div>
+              <h1 class="text-3xl font-bold font-raleway mb-2">Couple 20</h1>
+              <p>Coupon Code</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center my-14">
+          <button
+            class="btn btn-outline btn-success font-raleway text-xl font-semibold flex justify-center items-center"
+          >
+            See All offers
+          </button>
+        </div>
+      </div>
+    </main>
 
     <script src="app.js"></script>
   </body>
