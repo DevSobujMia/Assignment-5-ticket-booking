@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bus Ticket</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css"
       rel="stylesheet"
@@ -11,27 +12,67 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-white h-screen text-black">
+  <body class="bg-white h-screen text-black font-inter">
     <header class="max-w-[1172px] mx-auto pt-8">
-        <nav class="flex justify-between items-center mb-16">
-            <h1 class="font-bold text-4xl">P-Ticket</h1>
-            <ul class="flex justify-between items-center gap-16 font-medium">
-                <li>Home</li>
-                <li>About</li>
-                <li>Destination</li>
-                <li>Search</li>
-            </ul>
-            <button class="btn bg-[#1DD100] bg-opacity-20 font-bold text-2xl flex justify-between items-center gap-2 text-[#1DD100] border border-solid border-[#1DD100] ">Bus <img src="images/bus-icon.png" alt="bus-icon"></button>
-        </nav>
+      <nav class="flex justify-between items-center mb-16">
+        <h1 class="font-extrabold text-4xl font-raleway">P-Ticket</h1>
+        <ul class="flex justify-between items-center gap-16 font-medium">
+          <li>Home</li>
+          <li>About</li>
+          <li>Destination</li>
+          <li>Search</li>
+        </ul>
+        <button
+          class="btn bg-[#1DD100] bg-opacity-20 font-bold text-2xl flex justify-between items-center gap-2 text-[#1DD100] border border-solid border-[#1DD100] font-raleway"
+        >
+          Bus <img src="images/bus-icon.png" alt="bus-icon" />
+        </button>
+      </nav>
 
-        <div class="bg-cover bg-center py-16 h-[550px] rounded-2xl text-center" style="background-image: url('images/banner.png');">
-            <h1 class="text-6xl font-bold text-white">End-to-End Travel with <br> <span class="text-[#1DD100]">P Paribahan</span></h1>
-            <p class="text-lg mt-4 text-white">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
-            <button class="mt-8 px-6 py-3 bg-green-500 text-black font-semibold rounded hover:bg-green-600">Buy Tickets</button>
+      <div
+        class="bg-cover bg-center py-16 h-[550px] rounded-2xl text-center"
+        style="background-image: url('images/banner.png')"
+      >
+        <h1 class="text-6xl font-bold text-white font-raleway">
+          End-to-End Travel with <br />
+          <span class="text-[#1DD100]">P Paribahan</span>
+        </h1>
+        <p class="text-lg mt-4 text-white">
+          Yes, you can run unit tests and view the results directly within the
+          app. The <br />
+          integrated testing features allow for a streamlined .
+        </p>
+        <button
+          class="mt-8 px-6 py-3 bg-[#1DD100] text-xl text-black font-bold rounded hover:bg-green-600 font-raleway"
+        >
+          Buy Tickets
+        </button>
+      </div>
+      <div class="flex justify-evenly">
+        <div
+          class="w-[308px] h-[138px] border-b-4 border-[#1DD100] rounded-2xl flex justify-center items-center gap-5"
+        >
+          <img src="images/people.png" alt="" />
+          <div class="">
+            <h1 class="text-4xl font-bold mb-2">500K+</h1>
+            <p class="text-lg text-[#030712] text-opacity-60">
+              Registered users
+            </p>
           </div>
-          
+        </div>
+        <div>
+          <img src="images/ticket-cupon.png" alt="" />
+          <h1>1.7 lacks</h1>
+          <p>Tickets sold</p>
+        </div>
+        <div>
+          <img src="images/stoppage.png" alt="" />
+          <h1>80K+</h1>
+          <p>Rental partners</p>
+        </div>
+      </div>
     </header>
-    
+
     <script src="app.js"></script>
   </body>
 </html>
