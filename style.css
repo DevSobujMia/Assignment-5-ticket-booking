@@ -7,3 +7,64 @@
 .font-raleway {
   font-family: "Raleway", sans-serif;
 }
+
+#bus-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.row-label {
+  width: 70px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.seat {
+  width: 110px;
+  height: 56px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 8px;
+  font-size: 18px;
+  color: #666;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.seat:hover {
+  background-color: #1dd100;
+  color: #ffffff;
+}
+
+.gap {
+  margin-right: 50px;
+}
+
+.selected-seat-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected {
+  background-color: #1dd100;
+  color: #fff;
+}
+
+.selected:hover {
+  color: #333;
+}

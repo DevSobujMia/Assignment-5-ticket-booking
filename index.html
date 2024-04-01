@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus Ticket</title>
+    <title>BUS Ticket Booking</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css"
@@ -16,11 +16,11 @@
     <header class="max-w-[1171px] mx-auto pt-8">
       <nav class="flex justify-between items-center mb-16">
         <h1 class="font-extrabold text-4xl font-raleway">P-Ticket</h1>
-        <ul class="flex justify-between items-center gap-16 font-medium">
-          <li>Home</li>
-          <li>About</li>
-          <li>Destination</li>
-          <li>Search</li>
+        <ul class="flex justify-between items-center gap-10 font-medium">
+          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Home</li>
+          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">About</li>
+          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Destination</li>
+          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Search</li>
         </ul>
         <button
           class="btn bg-[#1DD100] bg-opacity-20 font-bold text-2xl flex justify-between items-center gap-2 text-[#1DD100] border border-solid border-[#1DD100] font-raleway"
@@ -44,7 +44,7 @@
           app. The <br />
           integrated testing features allow for a streamlined .
         </p>
-        <button
+        <button id="buy-ticket-button"
           class="mt-8 px-6 py-3 bg-[#1DD100] text-xl text-black font-bold rounded hover:bg-green-600 font-raleway relative"
         >
           Buy Tickets
@@ -144,7 +144,7 @@
       <section
         class="border-t-2 border-[#1DD100] rounded-t-[82px] bg-[#F7F8F8]"
       >
-        <div class="max-w-[1170px] mx-auto">
+        <div class="max-w-[1170px] mx-auto mb-8">
           <div class="text-center my-16">
             <h1 class="font-bold text-4xl font-raleway mt-28">P.H Paribahan</h1>
             <p class="opacity-70 text-lg my-7">
@@ -183,14 +183,22 @@
                   <p class="text-xl font-medium opacity-80">Route</p>
                   <p class="text-xl font-medium">Dhaka - Sylhet</p>
                 </div>
-                <div class="flex justify-between border-t-2 border-b-2 border-dashed border-gray-400 my-6 py-4">
+                <div
+                  class="flex justify-between border-t-2 border-b-2 border-dashed border-gray-400 my-6 py-4"
+                >
                   <p class="text-xl font-medium opacity-80">Departure Time</p>
                   <p class="text-xl font-medium">9:00 PM</p>
                 </div>
                 <div class="flex justify-between">
-                  <button class="btn btn-width font-medium text-lg">Boarding Point - Laxmipur</button>
-                  <button class="btn btn-width font-medium text-lg">Dropping Point - Bogura</button>
-                  <button class="btn btn-width font-medium text-lg">Est. Time - 11 Hour</button>
+                  <button class="btn btn-width font-medium text-lg">
+                    Boarding Point - Laxmipur
+                  </button>
+                  <button class="btn btn-width font-medium text-lg">
+                    Dropping Point - Bogura
+                  </button>
+                  <button class="btn btn-width font-medium text-lg">
+                    Est. Time - 11 Hour
+                  </button>
                 </div>
               </div>
             </div>
@@ -199,6 +207,82 @@
               <img class="ml-9 mb-6" src="images/fare.png" alt="" />
               <h1 class="text-3xl font-bold my-2">550 Taka</h1>
               <p class="text-2xl font-semibold opacity-70">Per Seat</p>
+            </div>
+          </div>
+        </div>
+        <!-- bus seats layout section -->
+        <div>
+          <div
+            class="flex justify-between w-[1171px] h-[1056px] mx-auto bg-white rounded-3xl p-6"
+          >
+            <div id="ticket-selection-section" class="w-[610px]">
+              <h1 class="font-semibold text-2xl font-raleway">
+                Select Your Seat
+              </h1>
+              <div
+                class="flex justify-between items-center font-medium text-lg text-center my-6 py-4 border-t-2 border-b-2 border-dashed"
+              >
+                <div class="flex justify-center">
+                  <img class="mr-2" src="images/seat-gray.png" alt="" />
+                  <p class="opacity-70">Available</p>
+                </div>
+                <div class="flex justify-between">
+                  <img class="mr-2" src="images/seat-green-filled.png" alt="" />
+                  <p class="text-[#1DD100]">Selected</p>
+                </div>
+              </div>
+              <div class="flex justify-end">
+                <button
+                  class="bg-[#e6e6e7] w-[110px] h-[56px] rounded-xl flex justify-center items-center"
+                >
+                  <img class="" src="images/Vector.png" alt="" />
+                </button>
+              </div>
+
+              <div id="bus-layout"></div>
+            </div>
+
+            <div class="w-[453px]">
+              <h1
+                class="font-semibold text-2xl font-raleway border-b-2 border-dashed pb-6"
+              >
+                Your Selected Seats
+              </h1>
+              <div
+                class="w-[433px] h-[335px] bg-[#F7F8F8] mx-auto my-6 rounded-3xl p-6"
+              >
+                <div class="flex justify-between border-b-2 border-dashed pb-2">
+                  <div>Seat</div>
+                  <div>Class</div>
+                  <div>Price</div>
+                </div>
+                <div class="h-[120px] py-2" id="selected-seats"></div>
+                <div class="flex justify-between border-t-2 pt-2">
+                  <div>Total Price</div>
+                  <div>BDT <span id="total-price">0</span></div>
+                </div>
+                <div class="my-4">
+                  <label class="input flex justify-between items-center pr-1">
+                    <input
+                      type="text"
+                      class=""
+                      placeholder="Have any copupon?"
+                    />
+                    <button
+                      class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-xl"
+                    >
+                      Apply
+                    </button>
+                  </label>
+                  <div class="flex justify-between my-4">
+                    <div>Grand Total</div>
+                    <div>BDT</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <!--  -->
+              </div>
             </div>
           </div>
         </div>
