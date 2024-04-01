@@ -82,12 +82,37 @@ function updateSelectedSeats() {
     totalPriceContainer.textContent = totalPrice;
 }
 
+
+// Click "Buy Ticket" button to take ticket selection section
 document.getElementById("buy-ticket-button").addEventListener("click", function() {
     // Scroll smoothly to the ticket selection section
     document.getElementById("ticket-selection-section").scrollIntoView({
         behavior: 'smooth'
     });
 });
+
+// Passenger Details----
+const passengerNameInput = document.getElementById('passenger-name');
+const phoneNumberInput = document.getElementById('phone-number');
+const nextButton = document.getElementById('next-button');
+
+passengerNameInput.addEventListener('input', validateForm);
+phoneNumberInput.addEventListener('input', validateForm);
+
+function validateForm() {
+  if (passengerNameInput.validity.valid && phoneNumberInput.validity.valid) {
+    nextButton.removeAttribute('disabled');
+  } else {
+    nextButton.setAttribute('disabled', true);
+  }
+}
+
+document.getElementById('passenger-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  // Add your form submission logic here
+  console.log("Form submitted!");
+});
+
 
 
 // Call the function to generate the bus layout
