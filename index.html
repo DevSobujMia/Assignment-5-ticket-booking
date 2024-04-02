@@ -15,12 +15,30 @@
   <body class="bg-white text-black font-inter">
     <header class="max-w-[1171px] mx-auto pt-8">
       <nav class="flex justify-between items-center mb-16">
-        <h1 class="font-extrabold text-4xl font-raleway">P-Ticket</h1>
+        <h1 class="font-extrabold text-4xl font-raleway cursor-pointer">
+          P-Ticket
+        </h1>
         <ul class="flex justify-between items-center gap-10 font-medium">
-          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Home</li>
-          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">About</li>
-          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Destination</li>
-          <li class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer">Search</li>
+          <li
+            class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer"
+          >
+            Home
+          </li>
+          <li
+            class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer"
+          >
+            About
+          </li>
+          <li
+            class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer"
+          >
+            Destination
+          </li>
+          <li
+            class="py-2 px-4 hover:bg-green-500 rounded-md hover:text-white transition-colors duration-300 cursor-pointer"
+          >
+            Search
+          </li>
         </ul>
         <button
           class="btn bg-[#1DD100] bg-opacity-20 font-bold text-2xl flex justify-between items-center gap-2 text-[#1DD100] border border-solid border-[#1DD100] font-raleway"
@@ -44,7 +62,8 @@
           app. The <br />
           integrated testing features allow for a streamlined .
         </p>
-        <button id="buy-ticket-button"
+        <button
+          id="buy-ticket-button"
           class="mt-8 px-6 py-3 bg-[#1DD100] text-xl text-black font-bold rounded hover:bg-green-600 font-raleway relative"
         >
           Buy Tickets
@@ -172,7 +191,7 @@
                     class="btn bg-[#1DD100] bg-opacity-20 font-semibold text-xl flex justify-between items-center gap-2 text-[#1DD100]"
                   >
                     <img src="images/seat-green.png" alt="" />
-                    40 Seats left
+                    <span id="remaining-seats-btn">40</span> Seats left
                   </button>
                 </div>
               </div>
@@ -246,13 +265,13 @@
               <h1
                 class="font-semibold text-2xl font-raleway border-b-2 border-dashed pb-6"
               >
-                Your Selected Seats
+                Selected Seat info
               </h1>
               <div
                 class="w-[433px] h-[335px] bg-[#F7F8F8] mx-auto my-6 rounded-3xl p-6"
               >
                 <div class="flex justify-between border-b-2 border-dashed pb-2">
-                  <div>Seat</div>
+                  <div>Seat <span id="selected-seats-btn">0</span></div>
                   <div>Class</div>
                   <div>Price</div>
                 </div>
@@ -281,22 +300,58 @@
                 </div>
               </div>
 
-                              <!-- customer details -->
+              <!-- customer details -->
               <div>
                 <form id="passenger-form" class="w-[433px] mx-auto mt-8">
                   <div class="mb-8 relative">
-                    <label for="passenger-name" class="block text-gray-700 font-bold mb-4">Passenger Name*</label>
-                    <input type="text" id="passenger-name" class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none" placeholder="Enter your name" required>
+                    <label
+                      for="passenger-name"
+                      class="block text-gray-700 font-bold mb-4"
+                      >Passenger Name*</label
+                    >
+                    <input
+                      type="text"
+                      id="passenger-name"
+                      class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none"
+                      placeholder="Enter your name"
+                      required
+                    />
                   </div>
                   <div class="mb-8 relative">
-                    <label for="phone-number" class="block text-gray-700 font-bold mb-4">Phone Number*</label>
-                    <input type="tel" id="phone-number" class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none" placeholder="Enter your phone number" required>
+                    <label
+                      for="phone-number"
+                      class="block text-gray-700 font-bold mb-4"
+                      >Phone Number*</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone-number"
+                      class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none"
+                      placeholder="Enter your phone number"
+                      required
+                    />
                   </div>
                   <div class="mb-8 relative">
-                    <label for="email" class="block text-gray-700 font-bold mb-4">Email ID</label>
-                    <input type="email" id="email" class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none" placeholder="Enter your email">
+                    <label
+                      for="email"
+                      class="block text-gray-700 font-bold mb-4"
+                      >Email ID</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none"
+                      placeholder="Enter your email"
+                    />
                   </div>
-                  <button type="submit" id="next-button" class="mb-6 bg-[#1DD100] h-[60px] hover:bg-green-500 text-white text-xl font-raleway font-bold rounded-2xl w-full cursor-pointer" disabled>Next</button>
+                  <button
+                    type="submit"
+                    id="next-button"
+                    class="mb-6 bg-[#1DD100] h-[60px] hover:bg-green-500 text-white text-xl font-raleway font-bold rounded-2xl w-full cursor-pointer"
+                    disabled
+                  >
+                    Next
+                  </button>
                 </form>
                 <div class="flex justify-around underline cursor-pointer">
                   <div>Terms and Conditions</div>
@@ -315,19 +370,22 @@
           <div>
             <h1 class="text-4xl font-extrabold font-raleway mb-4">P-Ticket</h1>
             <p class="opacity-70 leading-7">
-              P-Ticket is a digital platform to make your <br> daily commuting better.
+              P-Ticket is a digital platform to make your <br />
+              daily commuting better.
             </p>
           </div>
           <div>
-            <h2 class="text-xl font-raleway font-semibold mb-4">Download our app</h2>
+            <h2 class="text-xl font-raleway font-semibold mb-4">
+              Download our app
+            </h2>
             <div class="flex gap-2 border py-2 px-4 rounded-lg">
-              <img src="images/playstore.png" alt="">
+              <img src="images/playstore.png" alt="" />
               <div>
                 <p class="text-xs">GET IT ON</p>
                 <p class="text-xl">Google Play</p>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         <div class="flex justify-between py-8">

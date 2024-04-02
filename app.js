@@ -52,6 +52,10 @@ function toggleSeatSelection() {
     }
     // Update selected seats display and total price
     updateSelectedSeats();
+    // Update remaining seats display
+    updateRemainingSeats();
+    // Update selected seats count display
+    updateSelectedSeatsCount();
 }
 
 // Function to update selected seats display and calculate total price
@@ -82,6 +86,22 @@ function updateSelectedSeats() {
     totalPriceContainer.textContent = totalPrice;
 }
 
+// Function to update remaining seats display
+function updateRemainingSeats() {
+    let remainingSeatsBtn = document.getElementById("remaining-seats-btn");
+    let selectedSeats = document.querySelectorAll(".seat.selected");
+    let remainingSeats = 40 - selectedSeats.length;
+    remainingSeatsBtn.textContent = remainingSeats;
+}
+
+// Function to update selected seats count display
+function updateSelectedSeatsCount() {
+    let selectedSeatsCount = document.querySelectorAll(".seat.selected").length;
+    document.getElementById("selected-seats-btn").textContent = selectedSeatsCount;
+}
+
+// Call the function to generate the bus layout
+generateBusLayout(10, 4); // 10 rows, 4 seats per row
 
 // Click "Buy Ticket" button to take ticket selection section
 document.getElementById("buy-ticket-button").addEventListener("click", function() {
@@ -113,7 +133,5 @@ document.getElementById('passenger-form').addEventListener('submit', function(ev
   console.log("Form submitted!");
 });
 
-
-
-// Call the function to generate the bus layout
-generateBusLayout(10, 4); // 10 rows, 4 seats per row
+// Update initial remaining seats display
+updateRemainingSeats();
