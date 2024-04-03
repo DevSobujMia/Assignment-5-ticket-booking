@@ -268,36 +268,46 @@
                 Selected Seat info
               </h1>
               <div
-                class="w-[433px] h-[335px] bg-[#F7F8F8] mx-auto my-6 rounded-3xl p-6"
+                class="w-[433px] h-[355px] bg-[#F7F8F8] mx-auto my-6 rounded-2xl p-6"
               >
-                <div class="flex justify-between border-b-2 border-dashed pb-2">
-                  <div>Seat <span id="selected-seats-btn">0</span></div>
+                <div
+                  class="flex justify-between border-b-2 border-dashed pb-2 font-semibold text-lg"
+                >
+                  <div>
+                    Seat
+                    <span
+                      id="selected-seats-btn"
+                      class="bg-[#1DD100] px-2 rounded-lg text-sm text-white"
+                      >0</span
+                    >
+                  </div>
                   <div>Class</div>
                   <div>Price</div>
                 </div>
                 <div class="h-[120px] py-2" id="selected-seats"></div>
-                <div class="flex justify-between border-t-2 pt-2">
+                <div
+                  class="flex justify-between border-t-2 pt-2 font-semibold text-lg"
+                >
                   <div>Total Price</div>
                   <div>BDT <span id="total-price">0</span></div>
                 </div>
+                <!-- Discount coupon section -->
                 <div class="my-4">
-                  <label class="input flex justify-between items-center pr-1">
-                    <input
-                      type="text"
-                      class=""
-                      placeholder="Have any copupon?"
-                    />
-                    <button
-                      class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-xl"
-                    >
-                      Apply
-                    </button>
+                  <label id="coupon-label" class="input flex justify-between items-center pr-1">
+                      <input type="text" id="coupon-code" class="w-full" placeholder="Have any coupon?" />
+                      <button id="apply-coupon-button" class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-xl" disabled>Apply</button>
                   </label>
-                  <div class="flex justify-between my-4">
-                    <div>Grand Total</div>
-                    <div>BDT</div>
+                  <div id="discount-info" class="hidden flex justify-between mt-6 pb-2 font-semibold text-lg border-b-2">
+                      <div>Total Discount</div>
+                      <div>BDT <span id="total-discount">0</span></div>
                   </div>
-                </div>
+                  <div class="flex justify-between my-2 font-semibold text-lg">
+                      <div>Grand Total</div>
+                      <div>BDT <span id="final-price">0</span></div>
+                  </div>
+              </div>
+              
+              
               </div>
 
               <!-- customer details -->
@@ -364,9 +374,11 @@
       </section>
     </main>
 
-    <footer class="bg-[#030712] w-full h-[457px] text-white pt-28">
+    <footer class="bg-[#030712] w-full text-white pt-28">
       <section class="w-[1171px] mx-auto">
-        <div class="flex justify-between border-b-2 border-dashed pb-12">
+        <div
+          class="flex justify-between border-b-2 border-dashed border-gray-700 pb-12"
+        >
           <div>
             <h1 class="text-4xl font-extrabold font-raleway mb-4">P-Ticket</h1>
             <p class="opacity-70 leading-7">
@@ -389,7 +401,9 @@
         </div>
 
         <div class="flex justify-between py-8">
-          <p>@all rights reserved, P-Ticket services limited.2024</p>
+          <p class="opacity-70">
+            @all rights reserved, P-Ticket services limited.2024
+          </p>
           <div class="flex justify-between gap-8 cursor-pointer">
             <div>Terms & condition</div>
             <div>Return & refund policy</div>

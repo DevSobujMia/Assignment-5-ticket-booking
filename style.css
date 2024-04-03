@@ -68,3 +68,8 @@
 .selected:hover {
   color: #333;
 }
+
+#apply-coupon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
