@@ -73,3 +73,8 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+#next-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

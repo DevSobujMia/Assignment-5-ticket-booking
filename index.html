@@ -69,6 +69,7 @@
           Buy Tickets
         </button>
       </div>
+      <!-- cover End -->
 
       <div class="flex justify-center">
         <div class="flex gap-8 absolute top-[630px]">
@@ -107,7 +108,7 @@
       </div>
     </header>
 
-    <main class="">
+    <main>
       <div class="mt-48 mb-28 w-[1171px] mx-auto font-inter">
         <h1 class="text-4xl font-bold font-raleway text-center mb-12">
           Best offers for you
@@ -159,7 +160,7 @@
           </button>
         </div>
       </div>
-
+      <!-- section br -->
       <section
         class="border-t-2 border-[#1DD100] rounded-t-[82px] bg-[#F7F8F8] pb-32"
       >
@@ -232,6 +233,7 @@
         <!-- bus seats layout section -->
         <div>
           <div
+            id="main-content-div"
             class="flex justify-between w-[1171px] mx-auto bg-white rounded-3xl p-6"
           >
             <div id="ticket-selection-section" class="w-[610px]">
@@ -293,24 +295,39 @@
                 </div>
                 <!-- Discount coupon section -->
                 <div class="my-4">
-                  <label id="coupon-label" class="input flex justify-between items-center pr-1">
-                      <input type="text" id="coupon-code" class="w-full" placeholder="Have any coupon?" />
-                      <button id="apply-coupon-button" class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-xl" disabled>Apply</button>
+                  <label
+                    id="coupon-label"
+                    class="input flex justify-between items-center pr-1"
+                  >
+                    <input
+                      type="text"
+                      id="coupon-code"
+                      class="w-full"
+                      placeholder="Have any coupon?"
+                    />
+                    <button
+                      id="apply-coupon-button"
+                      class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-xl"
+                      disabled
+                    >
+                      Apply
+                    </button>
                   </label>
-                  <div id="discount-info" class="hidden flex justify-between mt-6 pb-2 font-semibold text-lg border-b-2">
-                      <div>Total Discount</div>
-                      <div>BDT <span id="total-discount">0</span></div>
+                  <div
+                    id="discount-info"
+                    class="hidden flex justify-between mt-6 pb-2 font-semibold text-lg border-b-2"
+                  >
+                    <div>Total Discount</div>
+                    <div>BDT <span id="total-discount">0</span></div>
                   </div>
                   <div class="flex justify-between my-2 font-semibold text-lg">
-                      <div>Grand Total</div>
-                      <div>BDT <span id="final-price">0</span></div>
+                    <div>Grand Total</div>
+                    <div>BDT <span id="final-price">0</span></div>
                   </div>
-              </div>
-              
-              
+                </div>
               </div>
 
-              <!-- customer details -->
+              <!-- Passenger details -->
               <div>
                 <form id="passenger-form" class="w-[433px] mx-auto mt-8">
                   <div class="mb-8 relative">
@@ -334,7 +351,7 @@
                       >Phone Number*</label
                     >
                     <input
-                      type="tel"
+                      type="number"
                       id="phone-number"
                       class="border rounded-xl w-full h-[60px] px-4 text-gray-700 font-medium leading-tight focus:outline-none"
                       placeholder="Enter your phone number"
@@ -357,7 +374,7 @@
                   <button
                     type="submit"
                     id="next-button"
-                    class="mb-6 bg-[#1DD100] h-[60px] hover:bg-green-500 text-white text-xl font-raleway font-bold rounded-2xl w-full cursor-pointer"
+                    class="mb-6 bg-[#1DD100] h-[60px] text-white text-xl font-raleway font-bold rounded-2xl w-full cursor-pointer"
                     disabled
                   >
                     Next
@@ -370,6 +387,39 @@
               </div>
             </div>
           </div>
+
+          <!-- Success Message -->
+          <div
+            id="success-message"
+            class="w-[1171px] flex justify-center items-center text-center mx-auto bg-white rounded-3xl py-20 hidden"
+          >
+            <div>
+              <div>
+                <img
+                  class="mx-auto pt-20 pb-8"
+                  src="images/success.png"
+                  alt=""
+                />
+                <h1 class="text-2xl font-bold text-[#27AE60] mb-8">SUCCESS</h1>
+              </div>
+              <div>
+                <h2 class="text-xl font-bold mb-4 leading-8 opacity-80">
+                  Thank you for Booking Our Bus Seats. <br />
+                  We are working hard to find the best service and deals for you
+                </h2>
+                <p class="text-lg opacity-75">
+                  Shortly you will find a confirmation in your email.
+                </p>
+                <button
+                  id="continue-button"
+                  class="w-[300px] h-[60px] rounded-full bg-[#27AE60] text-white text-xl font-semibold my-6 hover:opacity-90"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
         </div>
       </section>
     </main>

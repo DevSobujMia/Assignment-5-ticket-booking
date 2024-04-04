@@ -52,11 +52,8 @@ function toggleSeatSelection() {
     }
     // Update selected seats display and total price
     updateSelectedSeats();
-    // Update remaining seats display
     updateRemainingSeats();
-    // Update selected seats count display
     updateSelectedSeatsCount();
-    // Update apply button status
     enableApplyButton();
 }
 
@@ -65,7 +62,6 @@ function updateSelectedSeats() {
     let selectedSeatsContainer = document.getElementById("selected-seats");
     let selectedSeats = document.querySelectorAll(".seat.selected");
     let totalPrice = 0;
-
     let selectedSeatsInfo = "";
 
     selectedSeats.forEach(function(seat) {
@@ -90,10 +86,9 @@ function updateSelectedSeats() {
 
 // Function to update remaining seats display
 function updateRemainingSeats() {
-    let remainingSeatsBtn = document.getElementById("remaining-seats-btn");
     let selectedSeats = document.querySelectorAll(".seat.selected");
     let remainingSeats = 40 - selectedSeats.length;
-    remainingSeatsBtn.textContent = remainingSeats;
+    document.getElementById("remaining-seats-btn").textContent = remainingSeats;
 }
 
 // Function to update selected seats count display
@@ -111,24 +106,20 @@ function enableApplyButton() {
 
 // Function to apply coupon discount
 function applyCoupon() {
-    // Get the coupon code and total price
     let couponCode = document.getElementById("coupon-code").value;
     let totalPrice = parseInt(document.getElementById("total-price").textContent);
     let finalPrice = totalPrice;
 
-    // Check if the coupon code is valid and total selected seats are 4 or more
     if ((couponCode === "NEW15" || couponCode === "Couple20") && totalPrice > 0) {
-        let discountPercentage = couponCode === "NEW15" ? 0.15 : 0.20; // Set discount percentage based on the coupon code
+        let discountPercentage = couponCode === "NEW15" ? 0.15 : 0.20;
         if (document.querySelectorAll(".seat.selected").length >= 4) {
-            let discount = totalPrice * discountPercentage; // Calculate discount
-            finalPrice -= discount; // Subtract discount from total price
-            // Display discount and final price
+            let discount = totalPrice * discountPercentage;
+            finalPrice -= discount;
             document.getElementById("total-discount").textContent = discount;
             document.getElementById("final-price").textContent = finalPrice;
-            // Hide apply button and show discount info
             document.getElementById("coupon-label").classList.add("hidden");
             document.getElementById("discount-info").classList.remove("hidden");
-            document.getElementById("apply-coupon-button").disabled = true; // Disable apply button after applying coupon
+            document.getElementById("apply-coupon-button").disabled = true;
         } else {
             alert("Coupon is valid only for 4 or more selected seats.");
         }
@@ -139,14 +130,6 @@ function applyCoupon() {
 
 // Event listener for applying coupon
 document.getElementById("apply-coupon-button").addEventListener("click", applyCoupon);
-
-// Event listener for Buy Ticket button
-document.getElementById("buy-ticket-button").addEventListener("click", function() {
-    // Scroll smoothly to the ticket selection section
-    document.getElementById("ticket-selection-section").scrollIntoView({
-        behavior: 'smooth'
-    });
-});
 
 // Event listener for form validation
 const passengerNameInput = document.getElementById('passenger-name');
@@ -164,18 +147,53 @@ function validateForm() {
     }
 }
 
+// Event listener for form submission
+document.getElementById('passenger-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    document.getElementById('main-content-div').classList.add('hidden');
+    document.getElementById('success-message').classList.remove('hidden');
+});
+
+// Event listener for continue button
+document.getElementById('continue-button').addEventListener('click', function() {
+    document.getElementById('success-message').classList.add('hidden');
+    document.getElementById('main-content-div').classList.remove('hidden');
+    resetSeatSelection();
+});
+
+// Function to reset seat selection
+function resetSeatSelection() {
+    let selectedSeats = document.querySelectorAll(".seat.selected");
+    selectedSeats.forEach(function(seat) {
+        seat.classList.remove("selected");
+    });
+    updateSelectedSeats();
+    updateRemainingSeats();
+    updateSelectedSeatsCount();
+    enableApplyButton();
+}
+
 // Event listener for seat selection
 document.querySelectorAll(".seat").forEach(function(seat) {
     seat.addEventListener("click", function() {
         toggleSeatSelection();
-        enableApplyButton(); // Update apply button status after seat selection
+        enableApplyButton();
     });
 });
+
+// Event listener for Buy Ticket button
+document.getElementById("buy-ticket-button").addEventListener("click", function() {
+    // Scroll smoothly to the ticket selection section
+    document.getElementById("ticket-selection-section").scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
 
 // Update initial remaining seats display
 updateRemainingSeats();
 
 // Call the function to generate the bus layout when the page loads
 window.addEventListener('load', function() {
-    generateBusLayout(10, 4); // 10 rows, 4 seats per row
+    generateBusLayout(10, 4);
 });
