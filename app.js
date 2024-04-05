@@ -137,14 +137,19 @@ const nextButton = document.getElementById('next-button');
 
 passengerNameInput.addEventListener('input', validateForm);
 phoneNumberInput.addEventListener('input', validateForm);
+document.querySelectorAll(".seat").forEach(function(seat) {
+    seat.addEventListener("click", validateForm); // Listen to seat clicks for form validation
+});
 
 function validateForm() {
-    if (passengerNameInput.validity.valid && phoneNumberInput.validity.valid) {
+    let selectedSeats = document.querySelectorAll(".seat.selected");
+    if (passengerNameInput.validity.valid && phoneNumberInput.validity.valid && selectedSeats.length > 0) {
         nextButton.removeAttribute('disabled');
     } else {
         nextButton.setAttribute('disabled', true);
     }
 }
+
 
 // Event listener for form submission
 document.getElementById('passenger-form').addEventListener('submit', function(event) {
