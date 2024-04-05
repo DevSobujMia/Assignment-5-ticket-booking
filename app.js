@@ -43,7 +43,6 @@ function toggleSeatSelection() {
         // Check if the maximum limit of 4 seats is reached
         let selectedSeats = document.querySelectorAll(".seat.selected");
         if (selectedSeats.length < 4) {
-            // Select the seat
             this.classList.add("selected");
         } else {
             // Display a message if the maximum limit is reached
@@ -161,7 +160,7 @@ document.getElementById('continue-button').addEventListener('click', function() 
     resetSeatSelection();
 });
 
-// Function to reset seat selection
+// Function to reset seat selection and clear form inputs
 function resetSeatSelection() {
     let selectedSeats = document.querySelectorAll(".seat.selected");
     selectedSeats.forEach(function(seat) {
@@ -171,7 +170,14 @@ function resetSeatSelection() {
     updateRemainingSeats();
     updateSelectedSeatsCount();
     enableApplyButton();
+
+    // Clear form inputs
+    document.getElementById('passenger-name').value = '';
+    document.getElementById('phone-number').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('next-button').setAttribute('disabled', true);
 }
+
 
 // Event listener for seat selection
 document.querySelectorAll(".seat").forEach(function(seat) {
@@ -181,9 +187,8 @@ document.querySelectorAll(".seat").forEach(function(seat) {
     });
 });
 
-// Event listener for Buy Ticket button
+// Event listener for "Buy Ticket" button to seats selection section scroll
 document.getElementById("buy-ticket-button").addEventListener("click", function() {
-    // Scroll smoothly to the ticket selection section
     document.getElementById("ticket-selection-section").scrollIntoView({
         behavior: 'smooth'
     });
@@ -193,7 +198,7 @@ document.getElementById("buy-ticket-button").addEventListener("click", function(
 // Update initial remaining seats display
 updateRemainingSeats();
 
-// Call the function to generate the bus layout when the page loads
+// Call the function to generate the bus layout
 window.addEventListener('load', function() {
     generateBusLayout(10, 4);
 });
