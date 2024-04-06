@@ -176,6 +176,14 @@ function resetSeatSelection() {
     updateSelectedSeatsCount();
     enableApplyButton();
 
+    // clear coupon section
+    document.getElementById('coupon-code').value = '';
+    document.getElementById('total-discount').textContent = '0';
+    document.getElementById('final-price').textContent = '0';
+    document.getElementById('coupon-label').classList.remove('hidden');
+    document.getElementById('discount-info').classList.add('hidden');
+    document.getElementById('apply-coupon-button').disabled = false;
+
     // Clear form inputs
     document.getElementById('passenger-name').value = '';
     document.getElementById('phone-number').value = '';
