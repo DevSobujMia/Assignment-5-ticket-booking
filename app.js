@@ -182,7 +182,7 @@ function resetSeatSelection() {
     document.getElementById('final-price').textContent = '0';
     document.getElementById('coupon-label').classList.remove('hidden');
     document.getElementById('discount-info').classList.add('hidden');
-    document.getElementById('apply-coupon-button').disabled = false;
+    document.getElementById('apply-coupon-button').disabled = true;
 
     // Clear form inputs
     document.getElementById('passenger-name').value = '';
